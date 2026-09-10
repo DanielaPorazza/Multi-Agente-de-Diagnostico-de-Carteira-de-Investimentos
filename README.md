@@ -9,6 +9,7 @@ Construído com foco avançado em **estratégia de dados e IA**, o sistema orque
 *   **[n8n](https://n8n.io/):** Orquestração do fluxo de trabalho e roteamento lógico dos agentes.
 *   **[Ollama](https://ollama.com/):** Execução de LLMs na infraestrutura para processamento das análises cognitivas e manutenção da privacidade de dados.
 *   **Integrações Externas:** Triggers de Chat, nós de envio de E-mail (Gmail) e Memória de Contexto.
+*   **Instruções de importação do workflow no n8n no final deste README.
 
 ## 🧠 Arquitetura do Sistema
 
@@ -61,3 +62,105 @@ Recebe o dossiê completo (dados do Agente 1 + análise do Agente 2) para gerar 
 
 ## ⚠️ Aviso Legal (Disclaimer)
 Este sistema tem finalidade **estritamente educacional**. O diagnóstico gerado reflete uma análise preliminar baseada em inteligência artificial e não substitui a avaliação individualizada e profissional de um especialista ou consultor de investimentos certificado. Nenhuma recomendação gerada aqui constitui garantia de rentabilidade ou indicação formal de compra/venda de ativos.
+
+## 🚀 Como importar o workflow no n8n
+
+Este repositório contém um workflow em formato JSON que pode ser importado diretamente no n8n
+.
+
+Siga o passo a passo abaixo para configurar o workflow.
+
+1. Copie o código JSON
+
+No repositório, localize o arquivo .json que contém o workflow.
+
+Abra o arquivo e clique em Raw para visualizar o código JSON completo.
+
+Depois:
+
+Selecione todo o conteúdo do arquivo (Ctrl + A no Windows/Linux ou Cmd + A no Mac).
+Copie o código (Ctrl + C ou Cmd + C).
+
+⚠️ Certifique-se de copiar todo o conteúdo do JSON, desde o primeiro { até o último }.
+
+2. Abra o n8n
+
+Acesse sua instalação do n8n
+ e entre no seu workspace.
+
+Você pode utilizar o n8n hospedado na nuvem ou uma instalação própria.
+
+3. Crie um novo workflow
+
+Dentro do n8n:
+
+Clique em Create Workflow ou New Workflow.
+Abra o editor de workflows.
+Com o workflow aberto, utilize a opção de importação de workflow.
+4. Importe o JSON
+
+No n8n, procure a opção:
+
+Import from Clipboard
+
+Cole o código JSON que você copiou do GitHub.
+
+Depois, confirme a importação.
+
+O n8n irá interpretar o arquivo e recriar automaticamente os nodes, conexões e configurações que estão presentes no workflow.
+
+5. Verifique os nodes
+
+Depois da importação, confira se todos os nodes foram carregados corretamente e se as conexões entre eles estão funcionando.
+
+Dependendo do workflow, alguns nodes podem exigir configurações adicionais, como:
+
+🔑 Credenciais de APIs
+🌐 URLs ou endpoints
+📋 Variáveis
+🗄️ Banco de dados
+🔐 Tokens de autenticação
+⚙️ Configurações específicas do seu ambiente
+6. Configure suas credenciais
+
+Caso algum node apresente um aviso de credencial ausente, abra o node e selecione ou configure a credencial correspondente.
+
+Importante: o JSON do workflow não deve conter senhas, tokens ou chaves privadas.
+
+Se o workflow depender de alguma API ou serviço externo, configure suas próprias credenciais dentro do n8n.
+
+7. Teste o workflow
+
+Antes de ativar o workflow, execute um teste manual.
+
+Clique em Execute Workflow e acompanhe a execução dos nodes.
+
+Verifique se:
+
+Todos os nodes executam corretamente;
+Não existem erros de autenticação;
+As informações estão sendo recebidas corretamente;
+As conexões entre os nodes estão funcionando;
+Os resultados estão de acordo com o esperado.
+8. Ative o workflow
+
+Depois de confirmar que tudo está funcionando corretamente, você pode ativar o workflow.
+
+A partir desse momento, ele poderá ser executado automaticamente de acordo com o trigger configurado no workflow.
+
+📌 Resumo rápido
+
+Se você já está familiarizado com o n8n, o processo é simples:
+
+GitHub → Abrir arquivo JSON → Raw → Copiar JSON → n8n → Import from Clipboard → Colar → Importar → Configurar credenciais → Testar → Ativar
+
+💡 Dica: sempre revise as credenciais e configurações após importar um workflow de terceiros. O JSON recria a estrutura do workflow, mas algumas configurações precisam ser adaptadas ao seu ambiente.
+
+🛠️ Requisitos
+
+Antes de importar o workflow, certifique-se de ter:
+
+Uma conta ou instalação do n8n;
+Acesso às ferramentas e APIs utilizadas pelo workflow;
+As credenciais necessárias para os serviços utilizados;
+As permissões necessárias para executar as integrações.
