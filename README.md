@@ -164,3 +164,4 @@ Uma conta ou instalação do n8n;
 Acesso às ferramentas e APIs utilizadas pelo workflow;
 As credenciais necessárias para os serviços utilizados;
 As permissões necessárias para executar as integrações.
+
